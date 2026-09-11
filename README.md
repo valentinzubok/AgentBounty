@@ -7,13 +7,13 @@
 <p align="center">
   <a href="https://docs.genlayer.com/"><img src="https://img.shields.io/badge/GenLayer-Intelligent%20Contract-0ea5a0?style=flat-square" alt="GenLayer" /></a>
   <a href="https://studio.genlayer.com/contracts"><img src="https://img.shields.io/badge/Studio-deployable-111827?style=flat-square" alt="Studio" /></a>
-  <a href="https://explorer-studio.genlayer.com/address/0xAf7e3250b6F6711FA279f665660a751631CF2d36"><img src="https://img.shields.io/badge/Studionet-live-14b8a6?style=flat-square" alt="Studionet" /></a>
+  <a href="https://explorer-studio.genlayer.com/address/0xEFf281347418bf1f045b59AA7B28f7a781e4e268"><img src="https://img.shields.io/badge/Studionet-live-14b8a6?style=flat-square" alt="Studionet" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="MIT" /></a>
 </p>
 
 | | |
 |---|---|
-| **Contract** | [`0xAf7e3250b6F6711FA279f665660a751631CF2d36`](https://explorer-studio.genlayer.com/address/0xAf7e3250b6F6711FA279f665660a751631CF2d36) |
+| **Contract** | [`0xEFf281347418bf1f045b59AA7B28f7a781e4e268`](https://explorer-studio.genlayer.com/address/0xEFf281347418bf1f045b59AA7B28f7a781e4e268) |
 | **Source** | [`contracts/AgentBounty.py`](contracts/AgentBounty.py) |
 | **Portal type** | **Intelligent Contracts** (this repo is IC-only — no wallet dApp) |
 | **Console Project** | separate repo: `AgentBountyDesk` |
@@ -52,11 +52,11 @@ credit → post_bounty → fund → submit_work (freeze body) →
 
 | Step | Result |
 |------|--------|
-| Deploy | [`0xb7b32543…`](https://explorer-studio.genlayer.com/tx/0xb7b325432986836dc24652ed695c2200e035d2a1bb9d9a110d94dfdb1386ef7e) |
-| `credit` | [`0xfeb31f1c…`](https://explorer-studio.genlayer.com/tx/0xfeb31f1c955d1cfd8a6a8ae33768ba2f847e9582c34050b00747c2f9ff83c6d4) |
-| `post_bounty(demo-1)` | [`0x84eb8aaf…`](https://explorer-studio.genlayer.com/tx/0x84eb8aafe30288769550e126ab0e5f60f7891f94bc165723d77f8a7cefc583c8) |
-| `fund(demo-1)` | [`0xcea52358…`](https://explorer-studio.genlayer.com/tx/0xcea523584a1fdcc0fa78b5d7946e98d715d6044820e0ce284cce14ebb0896fd9) |
-| `get_bounty("demo-1")` | `status: funded`, amount `100`, worker `0x2222…` |
+| Deploy | [`0xecda7c65…`](https://explorer-studio.genlayer.com/tx/0xecda7c658cefa376ba337bceb2a19bdff6c8eab4a50d92d746b6a79372ba5ea1) |
+| `credit` | [`0xb09ed292…`](https://explorer-studio.genlayer.com/tx/0xb09ed292214d61299fce8d9b9846d5d8648812e40bf34f7b801316eac82e5921) |
+| `post_bounty(demo-1)` | [`0xf53e154b…`](https://explorer-studio.genlayer.com/tx/0xf53e154bd8c0037a752f63ab8642aaa77f795f4103e82bfb494cee01ada3c4d8) |
+| `fund(demo-1)` | [`0x5688f3bc…`](https://explorer-studio.genlayer.com/tx/0x5688f3bc810f41b811d5474c41a8bfc6f6ae907d9d6a40d5095cf3150897d5bb) |
+| `get_bounty("demo-1")` | `status: funded`, amount `1000`, worker `0x2222…`, `worker_deadline` set |
 
 Full record: [`DEPLOY.md`](DEPLOY.md) · Portal paste: [`SUBMIT.md`](SUBMIT.md)
 
