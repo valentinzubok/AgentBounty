@@ -8,7 +8,9 @@
 | `submit_work` | write | bounty_id, delivery_url | worker; freezes URL |
 | `accept` | write | bounty_id | client; pay worker |
 | `dispute` | write | bounty_id, claim | client |
-| `adjudicate` | write | bounty_id | LLM on frozen delivery |
+| `adjudicate` | write | bounty_id | LLM on frozen body+hash; `pay_worker` literal bool only |
+| `cancel_funded` | write | bounty_id | client refund after worker miss window |
+| `timeout_release` | write | bounty_id | worker payout after client miss window |
 | `get_bounty` | view | bounty_id | JSON |
 | `get_balance` | view | user | JSON |
 | `list_ids` | view | — | JSON array |

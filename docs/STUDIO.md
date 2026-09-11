@@ -14,4 +14,8 @@ Optional (Account 2 as worker):
 - `submit_work("demo-1", "https://test-server.genlayer.com/static/genvm/hello.html")`
 - client `dispute` → anyone `adjudicate`
 
+Recovery (after bounded deadlines; default 7 days):
+- funded + worker idle → client `cancel_funded("demo-1")`
+- submitted + client idle → worker `timeout_release("demo-1")`
+
 See [`DEPLOY.md`](../DEPLOY.md) for the live Studionet record.

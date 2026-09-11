@@ -25,7 +25,9 @@
 Agent task markets need escrow that does not chase a rotting live delivery URL. **AgentBounty** freezes the worker delivery page under SHA-256 consensus, then settles with GenLayer LLMs on `{"pay_worker": bool}` only.
 
 ```text
-credit → post_bounty → fund → submit_work (freeze) → accept | dispute → adjudicate
+credit → post_bounty → fund → submit_work (freeze body) →
+  accept | dispute → adjudicate |
+  cancel_funded (worker idle) | timeout_release (client idle)
 ```
 
 ---
@@ -35,11 +37,13 @@ credit → post_bounty → fund → submit_work (freeze) → accept | dispute �
 | Method | Kind | Detail |
 |--------|------|--------|
 | `credit` | write · owner | Bookkeeping mint for demos |
-| `post_bounty` | write | Client posts terms; **worker ≠ client** |
-| `fund` | write | Lock client units into escrow |
-| `submit_work` | write | Worker freezes `delivery_url` via `get_webpage` + `eq_principle_strict_eq` |
+| `post_bounty` | write | Client posts terms; **worker ≠ client**; addresses lowercased |
+| `fund` | write | Lock escrow; starts bounded worker submit window |
+| `submit_work` | write | Freeze delivery **body** (8k) + hash under `eq_principle_strict_eq` |
 | `accept` | write | Happy path — pay worker |
-| `dispute` + `adjudicate` | write | LLM `prompt_comparative` on `pay_worker` |
+| `dispute` + `adjudicate` | write | LLM on frozen body+hash; `pay_worker` must be JSON bool |
+| `cancel_funded` | write | Client refund if worker misses submit window |
+| `timeout_release` | write | Worker payout if client misses accept/dispute window |
 | `get_bounty` / `list_ids` / `get_stats` / `get_balance` / `get_owner` | view | Steward reads |
 
 ---
